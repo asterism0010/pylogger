@@ -33,6 +33,7 @@ class Logger:
         line: bool = True,
         *,
         save: bool = True,
+        save_path: str = "./logs",
         quiet: bool = False,
         auto_highlight: bool = False,
         logfile_max: int = 30,
@@ -68,6 +69,7 @@ class Logger:
         self.save = save
         self.quiet = quiet
         self.auto_highlight = auto_highlight
+        self.save_path = save_path[:-1] if save_path[-1] == '/' else save_path
         self.queue: Queue = Queue()
         self.console = Console()
         self.logfileCleaner()
@@ -245,12 +247,12 @@ class Logger:
         self.level = level
 
     def logfileCleaner(self):
-        if not os.path.exists("logs"):
-            os.mkdir("logs")
+        if not os.path.exists(self.save_path):
+            os.mkdir(self.save_path)
             return
-        logs = os.listdir("./logs")[::-1]
+        logs = os.listdir(self.save_path)[::-1]
         while len(logs) > self.logfile_max:
-            os.remove(logs.pop())
+            os.remove(self.save_path + "/" + logs.pop())
 
     def __log(self):
         using: FrameType = currentframe().f_back.f_back.f_back
