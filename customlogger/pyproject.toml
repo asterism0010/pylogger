@@ -1,0 +1,18 @@
+[project]
+name = "customlogger"
+version = "2.1.8"
+authors = [
+  { name="metaone01", email="metaone01@outlook.com" },
+]
+description = "A highly customizable python logger.  Can record time,thread,process,function name,object ID... Everything you need."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/metaone01/customlogger"
+Issues = "https://github.com/metaone01/customlogger/issues"

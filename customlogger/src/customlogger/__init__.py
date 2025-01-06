@@ -55,23 +55,23 @@ class Logger:
             auto_highlight: rich自动语法高亮开关. 默认为False.
             logfile_max: 保留的旧日志文件数目. 默认为30.
             kw_min: Logger类型关键字长度. 默认为7.
-            level: Logger日志级别. 默认为level.NORMAL.
+            mode: Logger日志级别. 默认为mode.NORMAL.
         """
-        self.process = process
-        self.thread = thread
-        self.objID = objID
-        self.func_name = func_name
-        self.filename = filename
-        self.line = line
-        self.logfile_max = logfile_max
-        self.kw_min = kw_min
-        self.level = mode
-        self.save = save
-        self.quiet = quiet
-        self.auto_highlight = auto_highlight
-        self.save_path = save_path[:-1] if save_path[-1] == '/' else save_path
+        self.process: bool = process
+        self.thread: bool = thread
+        self.objID: bool = objID
+        self.func_name: bool = func_name
+        self.filename: bool = filename
+        self.line: bool = line
+        self.logfile_max: int = logfile_max
+        self.kw_min: int = kw_min
+        self.level: int | Logger.mode = mode
+        self.save: bool = save
+        self.quiet: bool = quiet
+        self.auto_highlight: bool = auto_highlight
+        self.save_path: str = save_path[:-1] if save_path[-1] == "/" else save_path
         self.queue: Queue = Queue()
-        self.console = Console()
+        self.console: Console = Console()
         self.logfileCleaner()
         Thread(target=self.__listener, name="logWriter", daemon=True).start()
         return
