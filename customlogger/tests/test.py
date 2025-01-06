@@ -1,6 +1,14 @@
-from customlogger import Logger
+from customlogger.src.customlogger import Logger
 
-logger = Logger(process=True, thread=True, objID=True, mode=Logger.mode.ALL,func_name=True,filename=True,line=True,)
+logger = Logger(
+    process=True,
+    thread=True,
+    objID=True,
+    mode=Logger.mode.ALL,
+    func_name=True,
+    filename=True,
+    line=True,
+)
 logger.debug("test_debug")
 logger.heartbeat("test_heartbeat")
 logger.notice("test_notice")
@@ -9,6 +17,7 @@ logger.warning("test_warning")
 logger.error("test_error")
 logger.fatal("test_fatal")
 logger.panic("test_panic")
+
 
 def test():
     logger.debug("test_debug_in_func")
@@ -19,9 +28,6 @@ def test():
     logger.error("test_error_in_func")
     logger.fatal("test_fatal_in_func")
     logger.panic("test_panic_in_func")
-
-
-test()
 
 
 class Test:
@@ -36,4 +42,5 @@ class Test:
         logger.panic("test_panic_in_method")
 
 
+test()
 Test.test()

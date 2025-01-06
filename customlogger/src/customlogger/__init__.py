@@ -13,7 +13,7 @@ __VERSION__ = "2.1.8"
 
 
 class Logger:
-    class mode:  # 调整日志级别
+    class mode(int):  # 调整日志级别
         ALL = -100
         DEBUG = -10
         NORMAL = 0
