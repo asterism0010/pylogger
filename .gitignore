@@ -3,5 +3,5 @@
 /__pycache__
 /logs
 /.vscode
-customlogger.egg-info/
+debuglogger.egg-info/
 dist/

@@ -1,10 +1,10 @@
 [project]
-name = "customlogger"
+name = "debuglogger"
 version = "2.1.8"
 authors = [
   { name="metaone01", email="metaone01@outlook.com" },
 ]
-description = "A highly customizable python logger.  Can record time,thread,process,function name,object ID... Everything you need."
+description = "A highly customizable python logger. Can record time,thread,process,function name,object ID... Everything you need."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -14,5 +14,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/metaone01/customlogger"
-Issues = "https://github.com/metaone01/customlogger/issues"
+Homepage = "https://github.com/metaone01/debuglogger"
+Issues = "https://github.com/metaone01/debuglogger/issues"

@@ -1,4 +1,4 @@
-from customlogger.src.customlogger import Logger
+from debuglogger.src.debuglogger import Logger
 
 logger = Logger(
     process=True,
